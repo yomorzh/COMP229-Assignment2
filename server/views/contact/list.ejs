@@ -1,0 +1,44 @@
+<% include ../partials/header.ejs %>
+
+<% include ../partials/main_nav.ejs %>
+
+  <!--Main content-->
+  <main class="container">
+      <div class="row">
+        <div class="offset-md-1 col-md-11">
+          <h1><%= title %></h1>
+          <a href="/contact-list/add" class="btn tn-primary" role = "button">
+          <i class="fas fa-plus-circle"></i> Add a Book</a>
+          <br>
+          <table class="table table-bordered table-striped table-hover">
+            <!--Header row-->
+            <tr class="d-flex">
+              <th class="text-center col-3">Name</th>
+              <th class="text-center col-2">Phone Number</th>
+              <th class="text-center col-3">Email</th>
+              <th class="text-center col-2"></th>
+              <th class="text-center col-2"></th>
+            </tr>
+            <!--Repeatable Template Row-->
+            <% for(let count=0; count < ContactList.length; count++){ %>
+              <tr class="d-flex">
+                <td class="text-center col-3"><%= ContactList[count].name %></td>
+                <td class="text-center col-2"><%= ContactList[count].phoneNumber %></td>
+                <td class="text-center col-3"><%= ContactList[count].email %></td>
+                <td class="text-center col-2">
+                  <a href="/contact-list/edit/<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
+                  <i class="fas fa-pencil-alt"></i> Edit</a>
+                </td>
+                <td class="text-center col-2">
+                  <a href="/contact-list/delete/<%= ContactList[count]._id %>" class="btn btn-danger btn-sm">
+                  <i class="fas fa-trash alt"></i> Delete</a>
+                </td>
+              </tr>
+            <% } %>
+          </table>
+        </div>
+      </div>
+  </main>
+<% include ../partials/bottom_nav.ejs %>
+
+<% include ../partials/footer.ejs %>

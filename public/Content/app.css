@@ -1,0 +1,15 @@
+
+img {
+    pointer-events: none;
+}
+
+.containerAbout img{
+    width: 120px;
+    float:left;
+    margin-right: 50px;
+  }
+.containerAbout p {
+    display: inline-flex;
+
+    width: 50%;
+  }
