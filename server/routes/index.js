@@ -2,36 +2,26 @@ let express = require('express');
 let router = express.Router();
 
 
-let app = express(), pdf = require('express-pdf');
+//let app = express(), pdf = require('express-pdf');
+
+let indexController = require('../controllers/index');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Personal page'});
-});
+router.get('/', indexController.displayHomePage);
 
 /* GET home page. */
-router.get('/home', function(req, res, next) {
-  res.render('home', { title: 'Home'});
-});
+router.get('/home', indexController.displayHomePage);
 
-/* GET home page. */
-router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'About'});
-});
+/* GET about page. */
+router.get('/about', indexController.displayAboutPage);
 
-/* GET home page. */
-router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Projects'});
-});
+/* GET projects page. */
+router.get('/projects', indexController.displayProjectsPage);
 
-/* GET home page. */
-router.get('/services', function(req, res, next) {
-  res.render('services', { title: 'Services'});
-});
+/* GET services page. */
+router.get('/services', indexController.displayServicesPage);
 
-/* GET home page. */
-router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Contact me'});
-});
+/* GET contact me page. */
+router.get('/contact', indexController.displayContactmePage);
 
 module.exports = router;
