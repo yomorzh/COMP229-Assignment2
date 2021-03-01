@@ -7,8 +7,10 @@
       <div class="row">
         <div class="offset-md-1 col-md-11">
           <h1><%= title %></h1>
-          <a href="/contact-list/add" class="btn tn-primary" role = "button">
-          <i class="fas fa-plus-circle"></i> Add a Book</a>
+          <% if(typeof displayName == 'string' && displayName) { %>
+          <a href="/contact-list/add" class="btn btn-primary" role = "button">
+          <i class="fas fa-plus-circle"></i> Add a Contact</a>
+          <% } %>
           <br>
           <table class="table table-bordered table-striped table-hover">
             <!--Header row-->
