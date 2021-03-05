@@ -20,7 +20,7 @@ function requireAuth(req,res,next){
 let contactController = require('../controllers/contact');
 
 /* GET Route for the Contact list page - READ operation*/
-router.get('/', requireAuth, contactController.displayContactList);
+router.get('/',requireAuth, contactController.displayContactList);
 
 /* GET Route for displaying Add page - CREATE operation*/
 router.get('/add', requireAuth, contactController.displayAddPage);
